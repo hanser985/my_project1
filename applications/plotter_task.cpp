@@ -17,7 +17,9 @@ extern "C" void plotter_task()
 {
   while (true) {
     // 通道 1：yaw；通道 2：A 目标角；通道 3：B 目标角，单位均为 rad。
-    plotter.plot(imu.yaw, target_a_debug, target_b_debug);
+    plotter.plot(
+      imu.yaw, target_a_debug, target_b_debug, remote.ch_rh, remote.ch_rv, remote.ch_lh,
+      remote.ch_lv);
 
     osDelay(10);
   }
