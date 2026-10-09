@@ -49,11 +49,11 @@ sp::RM_Motor motor_a(MOTOR_A_ID, sp::RM_Motors::GM6020);
 sp::RM_Motor motor_b(MOTOR_B_ID, sp::RM_Motors::GM6020);
 
 // 位置外环：角度(rad) -> 速度(rad/s)。
-sp::PID position_pid_a(CONTROL_DT, 6.0f, 0.0f, 0.0f, MAX_SPEED, 0.0f);
-sp::PID position_pid_b(CONTROL_DT, 6.0f, 0.0f, 0.0f, MAX_SPEED, 0.0f);
+sp::PID position_pid_a(CONTROL_DT, 1.0f, 0.0f, 0.0f, MAX_SPEED, 0.0f);
+sp::PID position_pid_b(CONTROL_DT, 1.0f, 0.0f, 0.0f, MAX_SPEED, 0.0f);
 // 速度内环：速度(rad/s) -> 力矩(N*m)。
-sp::PID speed_pid_a(CONTROL_DT, 0.20f, 0.02f, 0.0f, MAX_TORQUE, MAX_I_TORQUE);
-sp::PID speed_pid_b(CONTROL_DT, 0.20f, 0.02f, 0.0f, MAX_TORQUE, MAX_I_TORQUE);
+sp::PID speed_pid_a(CONTROL_DT, 1.0f, 0.0f, 0.0f, MAX_TORQUE, MAX_I_TORQUE);
+sp::PID speed_pid_b(CONTROL_DT, 1.0f, 0.0f, 0.0f, MAX_TORQUE, MAX_I_TORQUE);
 
 extern sp::Mahony imu;
 
